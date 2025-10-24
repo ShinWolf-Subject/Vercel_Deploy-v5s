@@ -35,3 +35,17 @@ Using curl:
 ```bash
 curl -H "Authorization: Bearer $VERCEL_API_TOKEN" https://api.vercel.com/v2/projects
 ```
+
+Using Node.js
+
+```js
+const fetch = require('node-fetch');
+
+const response = await fetch('https://api.vercel.com/v2/projects', {
+  headers: {
+    Authorization: `Bearer ${process.env.VERCEL_API_TOKEN}`,
+  },
+});
+const data = await response.json();
+console.log(data);
+```
